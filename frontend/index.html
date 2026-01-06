@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicSense AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-circles">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+    </div>
+
+    <div class="glass-container">
+        <header>
+            <span class="badge">DEEP LEARNING MODEL</span>
+            <h1>AI GENRE CLASSIFIER</h1>
+            <p>Upload any audio track. Our CNN model analyzes patterns to detect the musical genre instantly.</p>
+        </header>
+
+        <div class="upload-area" id="drop-area">
+            <input type="file" id="audioInput" accept="audio/*" hidden>
+            <div class="icon">🎵</div>
+            <p class="upload-text">Drop Audio File Here</p>
+            <p class="upload-subtext">Supports WAV, MP3, FLAC</p>
+            <p class="file-name" id="fileName"></p>
+        </div>
+
+        <button class="predict-btn" onclick="predictGenre()">
+            IDENTIFY GENRE
+        </button>
+
+        <div class="loader" id="loader">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="result-box" id="resultBox">
+            <div class="result-header">DETECTED GENRE</div>
+            <h2 id="genreText">JAZZ</h2>
+            
+            <div class="meta-data">
+                <span>Confidence Score</span>
+                <span id="confValue">0%</span>
+            </div>
+            
+            <div class="confidence-bar">
+                <div class="fill" id="confidenceFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
